@@ -1,9 +1,0 @@
-Duvidas:
-
-1. definir lista/array no modelo relacional -> equipamento - itens
-2. diferetes tipos de atributos -> se é necessario todos ou alguns
-3. como representar uma tabela derivada de um relacionamento e como são seus relacionamentos ( no final se torna uma entidade fraca? ) 
-4. como fica o relacionamento do contrato 
-5. revisar relacionamento no modelo logico 
-6. como fazer uma relaçao composta no brmodelo
-7. como gerar o script a partir do modelo logico no MySQL Workbench?
