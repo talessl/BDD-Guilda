@@ -9,9 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 import BD_Guilda.Mercadoria;
-import BD_Guilda.ControleMercador;
 import BD_Guilda.ControleMercadoria;
-import BD_Guilda.Mercador;
 
 //import MercadoriaTableModel;
 
@@ -229,6 +227,17 @@ public class ViewMercadoria extends JFrame {
 		contentPane.add(btnAtualizar);
 		
 		JButton btnMenu = new JButton("Menu");
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Acessar Menu 
+
+				dispose();
+				ViewMenu viewMenu = new ViewMenu();
+				viewMenu.setVisible(true);
+				
+			}
+		});
 		btnMenu.setBounds(449, 0, 85, 21);
 		contentPane.add(btnMenu);
 		

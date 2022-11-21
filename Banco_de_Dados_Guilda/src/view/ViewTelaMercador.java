@@ -10,11 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 import BD_Guilda.ControleMercador;
-import BD_Guilda.ControleMercadoria;
-import BD_Guilda.ControleVende;
 import BD_Guilda.Mercador;
-import BD_Guilda.Mercadoria;
-import BD_Guilda.Vende;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -24,6 +20,7 @@ import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
+import java.awt.Font;
 
 public class ViewTelaMercador extends JFrame {
 
@@ -44,8 +41,8 @@ public class ViewTelaMercador extends JFrame {
 	private JLabel lblNewLabel_4;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
-	private JTextField txtMercador;
 	private JTable jTMercador;
+	private JLabel lblNewLabel_1;
 
 	/**
 	 * Launch the application.
@@ -210,13 +207,6 @@ public class ViewTelaMercador extends JFrame {
 		btnNewButton_1.setBounds(153, 168, 89, 23);
 		contentPane.add(btnNewButton_1);
 		
-		txtMercador = new JTextField();
-		txtMercador.setHorizontalAlignment(SwingConstants.CENTER);
-		txtMercador.setText("Mercador");
-		txtMercador.setBounds(10, 22, 150, 29);
-		contentPane.add(txtMercador);
-		txtMercador.setColumns(10);
-		
 		JButton btnNewButton_2 = new JButton("Atualizar");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -252,6 +242,26 @@ public class ViewTelaMercador extends JFrame {
 		});
 		btnNewButton_2.setBounds(276, 169, 85, 21);
 		contentPane.add(btnNewButton_2);
+		
+		JButton btnMenu = new JButton("Menu");
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Acessar Menu 
+
+				dispose();
+				ViewMenu viewMenu = new ViewMenu();
+				viewMenu.setVisible(true);
+				
+			}
+		});
+		btnMenu.setBounds(452, 10, 85, 21);
+		contentPane.add(btnMenu);
+		
+		lblNewLabel_1 = new JLabel("Mercador");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(64, 32, 100, 20);
+		contentPane.add(lblNewLabel_1);
 	}
 	
 	public void readJTable() { 
@@ -282,7 +292,6 @@ public class ViewTelaMercador extends JFrame {
 		}
 		
 	}
-	
 }
 
 

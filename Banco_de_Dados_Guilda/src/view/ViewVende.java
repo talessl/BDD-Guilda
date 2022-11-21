@@ -16,12 +16,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-import BD_Guilda.ControleMercadoria;
 import BD_Guilda.ControleVende;
-import BD_Guilda.Mercadoria;
 import BD_Guilda.Vende;
 
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class ViewVende extends JFrame {
 
@@ -30,7 +29,6 @@ public class ViewVende extends JFrame {
 	 */
 	private static final long serialVersionUID = 2617762838524392987L;
 	private JPanel contentPane;
-	private JTextField txtVenda;
 	private JTextField txtId_Mercador;
 	private JTextField txtId_Mercadoria;
 	private JLabel lblNewLabel;
@@ -39,6 +37,7 @@ public class ViewVende extends JFrame {
 	private JButton btnAtualizar;
 	private JButton btnExcluir;
 	private JTable jTVende;
+	private JButton btnMenu;
 
 	/**
 	 * Launch the application.
@@ -87,13 +86,6 @@ public class ViewVende extends JFrame {
 		jTVende.setRowSorter(new TableRowSorter<DefaultTableModel>(modelo));
 		
 		readJTable();
-		
-		txtVenda = new JTextField();
-		txtVenda.setText("Vende");
-		txtVenda.setHorizontalAlignment(SwingConstants.CENTER);
-		txtVenda.setBounds(30, 23, 153, 27);
-		contentPane.add(txtVenda);
-		txtVenda.setColumns(10);
 		
 		txtId_Mercador = new JTextField();
 		txtId_Mercador.setBounds(30, 96, 133, 20);
@@ -208,6 +200,26 @@ public class ViewVende extends JFrame {
 		});
 		btnExcluir.setBounds(296, 146, 89, 23);
 		contentPane.add(btnExcluir);
+		
+		btnMenu = new JButton("Menu");
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Acessar Menu 
+
+				dispose();
+				ViewMenu viewMenu = new ViewMenu();
+				viewMenu.setVisible(true);
+				
+			}
+		});
+		btnMenu.setBounds(435, 10, 85, 21);
+		contentPane.add(btnMenu);
+		
+		JLabel lblNewLabel_1 = new JLabel("Tela Vende");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(62, 28, 127, 23);
+		contentPane.add(lblNewLabel_1);
 	}
 	
 
@@ -237,7 +249,6 @@ public class ViewVende extends JFrame {
 		}
 		
 	}
-
 }
 
 
