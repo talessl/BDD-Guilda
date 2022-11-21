@@ -3,5 +3,5 @@
 Banco de Dados T01 UFS 
 
 Grupo:
-Tales Silva Leopoldino
+Tales Silva Leopoldino &
 Antônio Humberto Passos Neto
