@@ -4,6 +4,7 @@ public class Vende {
 
 	private int id_mercador;
 	private int id_mercadoria;
+	private int id_mercadoria_Antiga;
 	private String nome_mercador;
 	private String nome_mercadoria;
 	
@@ -37,6 +38,14 @@ public class Vende {
 
 	public void setNome_mercadoria(String nome_mercadoria) {
 		this.nome_mercadoria = nome_mercadoria;
+	}
+
+	public int getId_mercadoria_Antiga() {
+		return id_mercadoria_Antiga;
+	}
+
+	public void setId_mercadoria_Antiga(int id_mercadoria_Antiga) {
+		this.id_mercadoria_Antiga = id_mercadoria_Antiga;
 	}
 	
 	

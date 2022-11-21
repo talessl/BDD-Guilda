@@ -38,6 +38,7 @@ public class ViewVende extends JFrame {
 	private JButton btnExcluir;
 	private JTable jTVende;
 	private JButton btnMenu;
+	private JTextField txtAntiga_Merc;
 
 	/**
 	 * Launch the application.
@@ -78,7 +79,7 @@ public class ViewVende extends JFrame {
 					
 				},
 				new String [] {
-						"ID", "MERCADOR", "PRODUTO"
+						"ID MERCADOR", "MERCADOR", "PRODUTO", "ID PRODUTO"
 				}
 				));
 		
@@ -178,6 +179,7 @@ public class ViewVende extends JFrame {
 				
 				vende.setId_mercador(Integer.parseInt(txtId_Mercador.getText()));
 				vende.setId_mercadoria(Integer.parseInt(txtId_Mercadoria.getText()));
+				vende.setId_mercadoria_Antiga(Integer.parseInt(txtAntiga_Merc.getText()));
 				
 				try {
 					ctr_vende.update(vende);
@@ -191,10 +193,9 @@ public class ViewVende extends JFrame {
 
 				txtId_Mercador.setText("");
 				txtId_Mercadoria.setText("");
+				txtAntiga_Merc.setText("");
 
 		        readJTable();
-				
-				
 				
 			}
 		});
@@ -220,6 +221,15 @@ public class ViewVende extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(62, 28, 127, 23);
 		contentPane.add(lblNewLabel_1);
+		
+		txtAntiga_Merc = new JTextField();
+		txtAntiga_Merc.setBounds(399, 96, 121, 19);
+		contentPane.add(txtAntiga_Merc);
+		txtAntiga_Merc.setColumns(10);
+		
+		JLabel lblAntigaMercadoria = new JLabel("Antiga Mercadoria");
+		lblAntigaMercadoria.setBounds(399, 82, 109, 14);
+		contentPane.add(lblAntigaMercadoria);
 	}
 	
 
@@ -235,7 +245,8 @@ public class ViewVende extends JFrame {
 				modelo.addRow(new Object[] {
 						m.getId_mercador(),
 						m.getNome_mercador(),
-						m.getNome_mercadoria()
+						m.getNome_mercadoria(),
+						m.getId_mercadoria_Antiga()
 						
 				});
 				

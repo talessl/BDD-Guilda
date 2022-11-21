@@ -83,7 +83,7 @@ public void create(Vende vende) throws ClassNotFoundException, SQLException {
 	        List<Vende> lista_vende = new ArrayList<>();
 
 	        try {
-	            stmt = conn.prepareStatement("SELECT mercador.id_mercador, mercador.nome, mercadoria.nome_produto"
+	            stmt = conn.prepareStatement("SELECT mercador.id_mercador, mercador.nome, mercadoria.nome_produto, mercadoria.id_mercadoria"
 	            		+ " FROM guilda.mercador JOIN guilda.vende ON(mercador.id_mercador = vende.id_mercador)"
 	            		+ " JOIN guilda.mercadoria ON(mercadoria.id_mercadoria = vende.id_mercadoria)");
 	            rs = stmt.executeQuery();
@@ -95,6 +95,7 @@ public void create(Vende vende) throws ClassNotFoundException, SQLException {
 	                vende.setId_mercador(rs.getInt("id_mercador"));
 	                vende.setNome_mercador(rs.getString("nome"));
 	                vende.setNome_mercadoria(rs.getString("nome_produto"));
+	                vende.setId_mercadoria_Antiga(rs.getInt("id_mercadoria"));
 	               
 	                lista_vende.add(vende);
 	            }
@@ -118,10 +119,11 @@ public void create(Vende vende) throws ClassNotFoundException, SQLException {
 
 	        try {
 	            stmt = conn.prepareStatement("UPDATE guilda.vende SET id_mercadoria = ?"
-	            		+ " WHERE id_mercador = ?");
+	            		+ " WHERE id_mercador = ? AND id_mercadoria = ?");
 	            
 	            stmt.setInt(1, vende.getId_mercadoria());
 	            stmt.setInt(2, vende.getId_mercador());
+	            stmt.setInt(3, vende.getId_mercadoria_Antiga());
 
 	            stmt.executeUpdate();
 
