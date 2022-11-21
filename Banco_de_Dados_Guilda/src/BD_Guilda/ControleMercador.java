@@ -31,10 +31,11 @@ public class ControleMercador {
             stmt.executeUpdate();
 
             System.out.println("Mercador Salvo!");	
-            //JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
             System.out.println(ex);
+            JOptionPane.showMessageDialog(null, "Erro ao Cadastrar");
         } finally {
         	DBfunction.fecharConexao(conn, stmt);
         }
@@ -96,7 +97,7 @@ public class ControleMercador {
 	            stmt.executeUpdate();
 
 	            System.out.println("Mercador Atualizado!");	
-	            //JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+	            JOptionPane.showMessageDialog(null, "Mercador Atualizado!");
 	            
 	        } catch (SQLException ex) {
 	            System.out.println(ex);
@@ -129,7 +130,7 @@ public class ControleMercador {
 	        	DBfunction.fecharConexao(conn, stmt);
 	        }
 
-	    }
+	 }
 	 
 	
 }
